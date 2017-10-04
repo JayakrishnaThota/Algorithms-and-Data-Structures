@@ -2,8 +2,8 @@ public int optimalstrategy(int[] array)
 {
     int n = array.length;
     int[][] dp = new int[n][n];
-    for(int i=0;i<n;i++){
-        for(int j=0,k=i;k<n;k++,j++){
+    for(int k=0;k<n;k++){
+        for(int i=0,j=k;j<n;i++,j++){
             // (F(i+2,j)
             int a = (i+2<=j?dp[i+2][j]:0);
             // (F(i+1,j-1)
