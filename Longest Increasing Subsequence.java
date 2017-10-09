@@ -1,4 +1,5 @@
-public int LIS(int[] nums){
+public int LIS(int[] nums)
+{
 int n = nums.length;
 int[] dp = new int[nums.length];
 int len = 0;
