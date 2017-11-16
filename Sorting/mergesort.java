@@ -1,3 +1,5 @@
+//TC:O(nlogn)
+//SC:O(n)
 package sorting;
 
 import java.util.Scanner;
