@@ -1,3 +1,5 @@
+//TC:O(n2)
+//SC:O(n)
 package sorting;
 import java.util.*;
 public class quicksort {
