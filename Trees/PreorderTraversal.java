@@ -1,8 +1,8 @@
 public void recPreorder(TreeNode root){
   if(root!=null){
     System.out.println(root.val);
-    recInorder(root.left);
-    recInorder(root.right);
+    recPreorder(root.left);
+    recPreorder(root.right);
   }
 }
 
