@@ -10,12 +10,22 @@ public List<Integer> Inorder(TreeNode root){
   List<Integer> result = new ArrayList();
   if(root==null) return result;
   Stack<TreeNode> stack = new Stack();
-  stack.push(root);
-  while(!stack.isEmpty()){
-    TreeNode temp = stack.pop();
-    result.add(temp.val);
-    if(temp.right!=null) stack.push(temp.right);
-    if(temp.left!=null) stack.push(temp.left);
+  TreeNode cur = root;
+  boolean done = false;
+  while(!done){
+    if(cur!=null){
+      stack.push(cur);
+      cur = cur.left;
+    }
+    else{
+      if(stack.isEmpty())
+        done = true;
+      else{
+        cur = stack.pop();
+        result.add(cur.val);
+        cur = cur.right;
+      }
+    }
   }
   return result;
 }
