@@ -1,0 +1,21 @@
+//O(n2) time and O(1) space
+class Solution {
+    public ListNode insertionSortList(ListNode head) {
+        //Sanity Check
+        if(head==null || head.next==null) return head;
+        ListNode dummy = new ListNode(0);
+        ListNode prev = dummy;
+        ListNode cur = head;
+        while(cur!=null){
+            ListNode next = cur.next;
+            while(prev.next!=null && prev.next.val<cur.val)
+                prev = prev.next;
+            //Insert cur between prev and prev.next
+            cur.next = prev.next;
+            prev.next = cur;
+            cur = next;
+            prev = dummy;
+        }
+        return dummy.next;
+    }
+}
