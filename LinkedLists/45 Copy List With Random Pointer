@@ -1,0 +1,34 @@
+//O(n) time and O(1) space
+public class Solution {
+    public RandomListNode copyRandomList(RandomListNode head) {
+        //Step 1: Create a new node and keep it next to the original nodes
+        RandomListNode iter = head;
+        while(iter!=null){
+            RandomListNode next = iter.next;
+            RandomListNode newnode = new RandomListNode(iter.label);
+            iter.next = newnode;
+            newnode.next = next;
+            iter = next;
+        }
+        //Step 2:  Copy the random nodes to the new nodes
+        iter = head;
+        while(iter!=null){
+            if(iter.random!=null){
+                iter.next.random = iter.random.next;
+            }
+            iter = iter.next.next;
+        }
+        //Step 3: Extract the original and random list
+        iter = head;
+        RandomListNode dummy = new RandomListNode(0);
+        RandomListNode rand = dummy;
+        while(iter!=null){
+            RandomListNode next = iter.next.next;
+            rand.next = iter.next;
+            rand = rand.next;
+            iter.next = next;
+            iter = next;
+        }
+        return dummy.next;
+    }
+}
