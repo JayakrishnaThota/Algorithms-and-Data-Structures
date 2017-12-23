@@ -1,0 +1,37 @@
+//O(mn) time and O(1) space
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> list = new ArrayList();
+        if(matrix==null || matrix.length==0) return list;
+        int row = matrix.length;
+        int col = matrix[0].length;
+        int rs=0,re=row-1,cs=0,ce=col-1;
+        while(rs<=re && cs<=ce){
+            //Move right
+            for(int i=cs;i<=ce;i++){
+                list.add(matrix[rs][i]);
+            }
+            rs++;
+            //Move Down
+            for(int i=rs;i<=re;i++){
+                list.add(matrix[i][ce]);
+            }
+            ce--;
+            //Move left
+            if(rs<=re&&cs<=ce){
+                for(int i=ce;i>=cs;i--){
+                    list.add(matrix[re][i]);           
+                }
+                re--;
+            }
+            //Move up
+            if(rs<=re&&cs<=ce){
+                for(int i=re;i>=rs;i--){
+                    list.add(matrix[i][cs]);
+                }
+                cs++;
+            }
+        }
+        return list;
+    }
+}
