@@ -1,0 +1,5 @@
+public int swap(int num){
+  int mask1 = 0xAAAAAAAA; //All even bits are 1 and all odd bits are 0 
+  int mask2 = 0x55555555; //All odd bits are 1 and all even bits are 1
+  return (num<< (1&mask1)) | (num>>(1&mask2));
+}
