@@ -1,0 +1,19 @@
+//O(n) and O(1) solution
+public void shuffle(int[] cards)
+{
+   int n = cards.length; //m=52;
+   for(int i=0;i<n;i++)
+   cards[i] = i;
+   for(int i=0;i<n;i++)
+   {
+      int r = i + (Math.random()*(n-i));
+      swap(cards,r,i);
+   }
+   return cards;
+}
+
+public void swap(int[] A, int i, int j){
+int temp = A[i];
+A[i] = A[j];
+A[j] = temp;
+}
