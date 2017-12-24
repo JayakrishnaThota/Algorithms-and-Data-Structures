@@ -1,0 +1,35 @@
+//O(n) time and O(1) space where n is the length of s
+class Solution {
+    public String minWindow(String s, String t) {
+        //Trivial case
+        if(s==null||t==null||s.length()<t.length()) return "";
+        //Maintain a hashmap for each character in t and it's frequency as value
+        Map<Character,Integer> map = new HashMap<>();
+        for(char c: t.toCharArray())
+        {
+            map.put(c,map.getOrDefault(c,0)+1);
+        }
+        int left=0,count=0,minlength=s.length()+1,minleft=0;
+        for(int right=0;right<s.length();right++){
+            char c = s.charAt(right);
+            if(map.containsKey(c)){
+                map.put(c,map.get(c)-1);
+                if(map.get(c)>=0) count++;
+            }
+            while(count==t.length()){
+                if(right-left+1<minlength){
+                    minlength = right-left+1;
+                    minleft = left;
+                }
+                if(map.containsKey(s.charAt(left)))
+                {
+                    char l = s.charAt(left);
+                    map.put(s.charAt(left),map.get(s.charAt(left))+1);
+                    if(map.get(s.charAt(left)) > 0)    count --;
+                }
+                left++;
+            }
+        }
+        return (minlength>s.length())?"":s.substring(minleft,minleft+minlength);
+    }
+}
