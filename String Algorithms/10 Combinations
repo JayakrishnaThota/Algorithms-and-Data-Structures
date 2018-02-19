@@ -1,0 +1,39 @@
+package StringAlgorithms;
+
+import java.util.*;
+
+public class Combinations {
+    public List<String> combinations(String s){
+        List<String> list = new ArrayList<>();
+        char[] ch = s.toCharArray();
+        Arrays.sort(ch);
+        s = String.valueOf(ch);
+        helper(list, new ArrayList<>(), s, 0);
+        return list;
+    }
+
+    public void helper(List<String> list, List<Character> sublist, String s, int start){
+            String result = "";
+            for(char c:sublist) result+=c;
+            list.add(result);
+        for(int i=start;i<s.length();i++){
+            sublist.add(s.charAt(i));
+            helper(list, sublist, s, i+1);
+            sublist.remove(sublist.size()-1);
+        }
+    }
+
+    public void display(List<String> list){
+        for(String l: list){
+            System.out.println("["+l+"]");
+        }
+    }
+
+    public static void main(String[] args) {
+        Combinations c = new Combinations();
+        String s = "abc";
+        List<String> list = c.combinations(s);
+        System.out.println("The possible combinations of the given string are ");
+        c.display(list);
+    }
+}
