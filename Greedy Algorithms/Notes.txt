@@ -1,0 +1,10 @@
+Greedy: This is an algorithm design paradigm. In this strategy, we make locally optimal decisions in the hope that it'll lead to globally optimal solution
+
+Characteristics of Greedy Algorithm: 
+1) Optimal Substructure
+2) Greedy choice property
+
+Examples: 1) Huffman coding algorithm
+2) Dijkstra's algorithm
+3) Prim's MST algorithm
+4) Interval scheduling algorithm
