@@ -1,0 +1,17 @@
+//O(n) time and O(1) space
+class Solution {
+    public String reverseString(String s) {
+        char[] ch = s.toCharArray();
+        reverse(ch,0,ch.length-1);
+        return String.valueOf(ch);
+    }
+    public void reverse(char[] ch, int low, int high){
+        while(low<high){
+            char temp = ch[low];
+            ch[low] = ch[high];
+            ch[high] = temp;
+            low++;
+            high--;
+        }
+    }
+}
