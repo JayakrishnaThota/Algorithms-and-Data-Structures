@@ -1,0 +1,24 @@
+package StringAlgorithms;
+import java.util.*;
+public class RemoveAdjacentCharacters {
+    //O(n) time and space
+    private String method(String s){
+        if(s==null || s.length()<2) return s;
+        Stack<Character> stack = new Stack();
+        for(int i=0;i<s.length();i++){
+            char c =s.charAt(i);
+            if(!stack.isEmpty() && stack.peek()==c) stack.pop();
+            else stack.push(c);
+        }
+        String result = "";
+        while(!stack.isEmpty()){
+            result = stack.pop() + result;
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        RemoveAdjacentCharacters r = new RemoveAdjacentCharacters();
+        String s = "ABCCBCBA";
+        System.out.println("The string after removing adjacent characters is "+r.method(s));
+    }
+}
