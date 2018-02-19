@@ -1,0 +1,11 @@
+Divide and conquer is an algorithmic paradigm. It consists of 3 steps:
+
+a) Divide: Divides the problem into subproblems
+b) Conquer: Recursively solves these subproblems.
+c) Combine: Combines the solution to these subproblems into solution to the original problem
+
+Learn Master Theorem
+
+Applications
+1) Merge sort
+2) Quick sort
