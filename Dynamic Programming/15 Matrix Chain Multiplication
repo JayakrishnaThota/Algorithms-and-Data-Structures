@@ -1,0 +1,31 @@
+package DynamicProgramming;
+import java.util.*;
+
+public class MatrixMultiplication {
+    //O(n3) time and O(n2) space
+    public int mul(int[] nums){
+        if(nums==null || nums.length==0) return 0;
+        int n = nums.length;
+        int[][] dp = new int[n][n];
+        for(int i=1;i<n;i++)
+            dp[i][i] = 0;
+        for(int L=2;L<n;L++){
+            for(int i=1;i<n-L+1;i++){
+                int j = i+L-1;
+                if(j==n) continue;
+                dp[i][j] = Integer.MAX_VALUE;
+                for(int k=i;k<j;k++){
+                    int cost = dp[i][k] + dp[k+1][j] + nums[i-1]*nums[k]*nums[j];
+                    if(cost<dp[i][j])
+                        dp[i][j] = cost;
+                }
+            }
+        }
+        return dp[1][n-1];
+    }
+    public static void main(String[] args) {
+        int[] p = {1,2,3,4};
+        MatrixMultiplication m = new MatrixMultiplication();
+        System.out.println("Min number of multiplications are "+m.mul(p));
+    }
+}
