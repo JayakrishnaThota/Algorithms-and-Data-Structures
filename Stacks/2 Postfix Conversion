@@ -1,0 +1,75 @@
+package Stacks;
+import java.util.*;
+//Given an infix expression, cpnvert it inot a postfix expression
+//Valid operators are : +,-,*,/,^
+//Any other character is treated as an operand
+public class PostfixConversion {
+
+    private int getPriority(char c){
+        switch (c){
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case'/':
+                return 2;
+            case'^':
+                return 3;
+        }
+        return -1;
+    }
+
+    private boolean isOperand(char c){
+        if(c=='+'||c=='-'||c=='*'||c=='/'||c=='^'||c=='('||c==')') return false;
+        return true;
+    }
+
+    //O(n) time and space
+    private String postfix(String s){
+        if(s==null || s.length()==0) return s;
+        Stack<Character> stack = new Stack<>();
+        String result = "";
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(isOperand(c)){
+                result+=c;
+            }
+            else if(c==')'){
+                while(!stack.isEmpty()){
+                    if(stack.peek()=='('){
+                        stack.pop();
+                        break;
+                    }
+                    else{
+                        result+=stack.pop();
+                    }
+                }
+            }
+            else if(c=='('){
+                stack.push(c);
+            }
+            else{
+                int priority = getPriority(c);
+                while (!stack.isEmpty()){
+                    char d = stack.peek();
+                    int prioirity2 = getPriority(d);
+                    if(prioirity2>=priority)
+                        result+=stack.pop();
+                    else
+                        break;
+                }
+                stack.push(c);
+            }
+        }
+        while (!stack.isEmpty())
+            result+=stack.pop();
+        return result;
+    }
+
+    public static void main(String[] args) {
+        PostfixConversion p = new PostfixConversion();
+        String expression = "a+b*(c^d-e)^(f+g*h)-i";
+        System.out.println("Postfix converted expression is "+p.postfix(expression));
+
+    }
+}
