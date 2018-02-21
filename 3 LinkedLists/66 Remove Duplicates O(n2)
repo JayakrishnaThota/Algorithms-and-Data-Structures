@@ -1,0 +1,58 @@
+package LinkedList;
+import java.util.*;
+
+//Given an unordered linked list, remove duplicates
+public class RemoveDuplciates {
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+        public ListNode(int val){
+            this.val = val;
+            this.next = null;
+        }
+    }
+
+    //O(n2) and O(1)
+    public static void removeDuplicates(ListNode head){
+        ListNode iter = head;
+        while(iter!=null){
+            int val = iter.val;
+            ListNode prev = iter, temp = iter.next;
+            while(temp!=null){
+                if(temp.val==val){
+                    prev.next = temp.next;
+                    temp = temp.next;
+                }
+                else{
+                    prev = prev.next;
+                    temp = temp.next;
+                }
+            }
+            iter = iter.next;
+        }
+    }
+
+    public static void display(ListNode iter){
+        while(iter!=null) {
+            System.out.print(iter.val);
+            if(iter.next!=null) System.out.print("->");
+            iter = iter.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(12);
+        head.next = new ListNode(11);
+        head.next.next = new ListNode(12);
+        head.next.next.next = new ListNode(21);
+        head.next.next.next.next = new ListNode(41);
+        head.next.next.next.next.next = new ListNode(43);
+        head.next.next.next.next.next.next = new ListNode(21);
+        System.out.println("Before removing duplicates");
+        display(head);
+        System.out.println("After removing duplicates");
+        removeDuplicates(head);
+        display(head);
+    }
+}
