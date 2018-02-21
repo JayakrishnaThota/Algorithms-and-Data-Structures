@@ -1,0 +1,66 @@
+package DynamicProgramming;
+import java.lang.reflect.Array;
+import java.util.*;
+//Given a set of northern bank cities and southern bank cities co-ordinates
+//which are on either side of the river. Find the maximum number of bridges
+//needed to be constructed so that no two bridges cross over.
+public class Bridges {
+    public static class Pair{
+        int north;
+        int south;
+    }
+
+    public int getBridges(Pair[] p){
+        int n = p.length;
+        //Sort by increasing order of north coordinates, if both are equal increasing order of south
+        Arrays.sort(p, new Comparator<Pair>() {
+            @Override
+            public int compare(Pair o1, Pair o2) {
+                if(o1.north!=o2.north)
+                    return o1.north-o2.north;
+                else
+                    return o1.south-o2.south;
+            }
+        });
+        display(p);
+        int[] dp = new int[n];
+        int max = 0;
+        for(int i=0;i<n;i++){
+            dp[i] = 1;
+            for(int j=0;j<i;j++){
+                if(p[i].south>=p[j].south){
+                    dp[i] = Math.max(dp[i], 1+dp[j]);
+                }
+                max = Math.max(max, dp[i]);
+            }
+        }
+        return max;
+    }
+
+    public void display(Pair[] p){
+        for(int i=0;i<p.length;i++){
+            System.out.println(p[i].north+","+p[i].south);
+        }
+    }
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        Bridges b = new Bridges();
+        System.out.println("Please enter the no of cities ");
+        int n = in.nextInt();
+        System.out.println("Please enter the "+n+" cities which are on the northern bank");
+        Pair[] p = new Pair[n];
+        for(int i=0;i<n;i++){
+            p[i] = new Pair();
+            p[i].north = in.nextInt();
+        }
+        System.out.println("Please enter the "+n+" cities which are on the southern bank");
+        int[] south = new int[n];
+        for(int i=0;i<n;i++){
+            p[i].south = in.nextInt();
+        }
+
+        System.out.println("The maximum no of bridges which can be constructed are "+b.getBridges(p));
+        in.close();
+    }
+}
