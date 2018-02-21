@@ -1,0 +1,57 @@
+package DynamicProgramming;
+import java.util.*;
+
+public class FloydWarshall {
+
+    //O(n3) time and O(n2) space
+    public int[][] getMatrix(int[][] d){
+        int m = d.length;
+        int n = d[0].length;
+        int[][] distancematrix = new int[m][n];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                distancematrix[i][j] = d[i][j];
+            }
+        }
+        for(int k=0;k<m;k++){
+            for(int i=0;i<m;i++){
+                for(int j=0;j<m;j++){
+                    if((distancematrix[i][k]+distancematrix[k][j])<distancematrix[i][j]){
+                        distancematrix[i][j] = distancematrix[i][k] + distancematrix[k][j];
+                    }
+                }
+            }
+        }
+        return distancematrix;
+    }
+
+    public void display(int[][] d){
+        for(int i=0;i<d.length;i++){
+            for(int j=0;j<d[0].length;j++){
+                if(d[i][j]==Integer.MAX_VALUE)
+                    System.out.println("INF ");
+                else
+                    System.out.println(d[i][j]+" ");
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        FloydWarshall f = new FloydWarshall();
+        System.out.println("Please enter the distance matrix dimensions");
+        int m = in.nextInt();
+        int n = in.nextInt();
+        int[][] d = new int[m][n];
+        System.out.println("Please enter the distance matrix components");
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                d[i][j] = in.nextInt();
+            }
+        }
+        System.out.println("All Shortest pair paths matrix is ");
+        int[][] distancematrix = f.getMatrix(d);
+        f.display(distancematrix);
+        in.close();
+    }
+}
