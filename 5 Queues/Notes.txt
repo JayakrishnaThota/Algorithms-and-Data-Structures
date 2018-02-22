@@ -1,0 +1,19 @@
+Queues:
+
+1) Queue - Fifo Or Lilo
+
+2) Front of a queue: Deletions and Rear of a queue: Insertions
+
+3) Enqueue, Dequeue, Underflow and Overflow
+
+4) Java Queue operations:
+-> queue.offer(int value), queue.poll(), queue.size(), queue.isEmpty(), queue.peek()
+
+5) Applications of a queue:
+a) Scheduling jobs in operating systems
+b) Simulating real-time queue scenarios
+
+6) Implementation of queues: 
+a) Fixed size Circular Array implementation
+b) Dynamic circular Array implementation
+c) LinkedList implementation
