@@ -1,0 +1,59 @@
+package LinkedList;
+import java.util.*;
+//Assume that n people are standing in a circle and given m
+//such that starting from person 1, after (m-1) counts the mth person is killed
+//Find the person who lives at the end
+public class JospheusCircle {
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+        public ListNode(int val){
+            this.val = val;
+            this.next = null;
+        }
+    }
+
+    //Optimized Version using recursion
+    //O(n) time and space
+    public int JospheusCircle(int n, int m){
+        if(n==1)
+            return 1;
+        else
+            return (JospheusCircle(n-1,m)+ m-1)%n+1;
+    }
+
+    //O(mn) time and O(n) space
+    public int Circular(int n, int m){
+        //Create a circular linked list
+        ListNode head = new ListNode(1);
+        ListNode iter = head;
+        for(int i=2;i<=n;i++){
+            iter.next = new ListNode(i);
+            iter = iter.next;
+        }
+        iter.next = head;
+        ListNode slow = head, fast = head;
+        while(slow.next!=fast){
+            int count = 1;
+            while (count!=m){
+                fast = slow;
+                slow = slow.next;
+                count++;
+            }
+            fast.next = slow.next;
+            slow = fast.next;
+        }
+        return slow.val;
+    }
+    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Please enter number of people");
+        int n = in.nextInt();
+        System.out.println("Please enter the parameter m");
+        int m = in.nextInt();
+        JospheusCircle j = new JospheusCircle();
+        System.out.println("The person survived is "+j.Circular(n,m));
+    }
+}
