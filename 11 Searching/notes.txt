@@ -1,0 +1,19 @@
+Searching is a fundamental problem in computer science. 
+
+The three standard ways to search are:
+1) Linear search(Sorted and Unsorted)
+2) Binary Search
+3) Interpolation Search
+
+In linear unsorted search, we start from the starting index and traverse the 
+entire array in the worst case where as in sorted case,
+we only need to search until we encounter the element or value greater than the element. 
+However, worst case complexity is O(n) in both cases
+
+In binary search, we start with the midpoint and if the element is less than mid,
+we search the left half or else we search the right half. 
+Note that the array needs to be sorted in case of binary search.
+The worst case complexity is O(logn).
+
+In interpolation search, we start with mid which is closer instead of taking the midpoint like in binary search. 
+The average case complexity is log(logn). However the worst case complexity is O(n).
