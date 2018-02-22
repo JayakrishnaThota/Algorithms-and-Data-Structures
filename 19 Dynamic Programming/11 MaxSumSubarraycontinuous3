@@ -24,4 +24,3 @@ public class MaxSumSubarraycontinuous3 {
         System.out.println("Max cost is "+m.method(arr));
     }
 }
-
