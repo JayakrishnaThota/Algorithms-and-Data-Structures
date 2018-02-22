@@ -1,0 +1,9 @@
+Dynamic Programming = Recursion + Memoization
+
+Characteristics of Dynamic Programming: 
+1) Optimal Substructure: Optimal solution to a problem can be obtained by optimal solutions to subproblems
+2) Overlapping Subproblems: There are common subproblems
+
+Types of DP:
+1) Top Down: First check if the value is there, if no then calculate it and save it 
+2) Bottom Up: Calculate the smaller problems and save it, then recursively calculate the bigger problems
