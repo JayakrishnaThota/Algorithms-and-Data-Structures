@@ -1,0 +1,17 @@
+Stack: Filo or Lifo
+1) Operations on a stack:
+Push, pop, peek, isEmpty, size
+
+2) Underflow and Overflow
+
+3) Applications of a stack:
+a) Postfix conversion and evaluation
+b) balancing the symbols
+c) Function calls
+d) Undo
+e) Back button in browser
+
+4) Implementation of stacks:
+a) Fixed array
+b) Dynamic array
+c) LinkedList implementation
