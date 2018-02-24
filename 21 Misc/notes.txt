@@ -1,0 +1,14 @@
+Bitwise Operations: &,|,~,^,<<,>>
+1) Check whether kth bit is set or not: n&(1<<k-1)
+2) Set kth bit: n|(1<<k-1)
+3) Clear kth bit: n&~(1<<k-1)
+4) Toggling kth bit: n^(1<<k-1)
+5) Toggling right most one bit: n&(n-1)
+6) Isolating right most one bit: n&~n
+7) Isolating right most zero bit: ~n&n+1
+8) Checking whether a given number is zero or not: if(n&(n-1)==0)
+9) Multiply a number by power of 2: n<<k = n*2powk
+8) Divide a number by a power of 2: n>>k = n/2powk
+9) Finding modulo of a number: (n%32) = n&(0x1F)
+n%8 = n&(0x7)
+10) Creating mask for Trailing zeroes: n&(-n)-1;
