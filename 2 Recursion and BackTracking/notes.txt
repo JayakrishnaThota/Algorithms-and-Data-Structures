@@ -1,1 +1,11 @@
 
+
+
+
+Backtracking: Refined Brute Force
+
+We start from a point and check every possibilty one by one starting from possibility one. If it does not proceed to next level, then we'll backtrack and start with possibility two. If it proceeds further, then we'll next examine 'm' possibilities from here in the same manner. If we exhaust all possibilities and didn't find anything else, then we need to stop. 
+
+Example Backtracking algorithms: 1) Knights tour problem
+2) N-Queens
+3) Graph coloring problem
