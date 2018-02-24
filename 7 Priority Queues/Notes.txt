@@ -1,0 +1,14 @@
+Priority Queue: Insert from one end and deletemax/min from the other end
+Operations: Insert, DeleteMax, RemoveMax
+Applications: Huffman coding Algorithm, Dijkstra Algorithm, Prim's MST, Selection problem
+Implementation: Unorderedarray, Orderedarray
+				Unordered LL, Ordered LL
+				Binary Search Tree, Balanced BST
+				Binary Heap: 1) O(logn) for insert, delete and update
+							 2) O(1) for deletemin/max
+
+Properties of Heap:
+1) Parent must be >= or <= it's children
+2) All leaves must be at h or h-1 where h is the max depth of the tree
+
+Binary Heap: Each node has atmost two children
