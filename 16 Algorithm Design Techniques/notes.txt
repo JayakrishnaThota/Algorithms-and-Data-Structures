@@ -1,1 +1,16 @@
+There are many algorithm design paradigms for solving problems. They can be classified as shown below:
 
+1) Classification by Implementation: 
+
+a) Recursion and Iteration
+b) Procedural or Non-procedural(We ask for something without implementing it)
+c) Serial or parallel or distributed
+d) Deterministic or Non-deterministic(guesses the best solution using heuristics)
+e) Exact or Approximate
+
+2) Classification by Design Method
+a) Greedy
+b) DP
+c) DC
+d) Linear programming
+e) Reduction
