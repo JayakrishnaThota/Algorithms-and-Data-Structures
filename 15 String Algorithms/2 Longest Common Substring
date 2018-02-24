@@ -29,3 +29,4 @@ public class LongestCommonSubstring {
         System.out.println("Length of the LCS of "+s+" and "+t+" is "+f.lcs(s,t));
     }
 }
+
