@@ -32,3 +32,5 @@ public class MergeFiles
         System.out.println("The optimal cost for merging the given array is "+m.mergefiles(arr));
     }
 }
+
+                
