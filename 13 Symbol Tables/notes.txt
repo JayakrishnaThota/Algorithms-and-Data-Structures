@@ -8,3 +8,4 @@ d) Ordered LinkedList: O(n) for all
 e) BST: O(n) for all
 f) Balanced BST: O(logn) for all
 g) HashTable: O(1) average for all
+
