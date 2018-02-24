@@ -1,1 +1,10 @@
-
+1) Symbol Table: Dictionary
+2) Operations: Insert, Search, Update and Delete
+3) Implementation: 
+a) Unordered array: O(n) for all
+b) Ordered array: O(n) for all
+c) Unordered LinkedList: O(n) for all
+d) Ordered LinkedList: O(n) for all
+e) BST: O(n) for all
+f) Balanced BST: O(logn) for all
+g) HashTable: O(1) average for all
