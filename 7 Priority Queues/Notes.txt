@@ -12,3 +12,23 @@ Properties of Heap:
 2) All leaves must be at h or h-1 where h is the max depth of the tree
 
 Binary Heap: Each node has atmost two children
+
+Mergeable heaps: Binary heaps are not efficient at merging one heap with another
+For this purpose, mergeable heaps are used. Union operation is efficient in mergeable heap.
+ADT Operations:
+1) Insert(H,x,k)
+2) DeleteMin(H)
+3) GetMin(H)
+4) Create()
+5) Union(H1,H2)
+
+Two mergeable heaps are: 
+1) Binomial Heap and 2) Fibonacci heap
+They also support the below operations:
+1) Decrease-Key(H,X,K)
+2) Delete(H,X)
+
+Binomial Heap: Binomial Heap consists of multiple trees unlike normal heaps which contain only one tree. 
+B0 is a single node tree. Bk is formed recursively by merging two Bk-1's such that one tree is the root and the other is the left child of the root.
+
+Fibonacci Heap: Fibinacci heap contains multiple trees to. Unlike binomial heaps, there is no restriction on the number of trees and height of trees. Eventhough worst case performance is O(n), amortised cost is O(1) 
