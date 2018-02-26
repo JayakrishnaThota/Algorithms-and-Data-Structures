@@ -1,0 +1,9 @@
+Sorting is a fundamental problem in computer science. It is judged by number of comparsions, time, memory etc. 
+Two types: Internal sort, External Sort
+
+Stable sort: Bubble, Insertion, Merge
+Inplace sort: Bubble, Insertion, Selection, Heapsort
+
+Selection sort requires the min number of swaps
+
+
