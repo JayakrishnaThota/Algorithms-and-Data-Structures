@@ -1,0 +1,4 @@
+Selection Algorithms: Find the kth smallest/largest number in an array
+1) You can sort and pick up the kth element in the array. This takes O(logn) for n operations
+2) You can use partition based algorithms(Median of medians)
+The worst case time complexity is O(n) and space complexity is O(1)
