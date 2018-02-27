@@ -10,3 +10,4 @@ Collision resolution techniques: 1) Separate Chaining
 2) Open Addressing
 
 Three in open addressing:1) Linear probing 2) Quadratic probing 3) Double Hashing
+
