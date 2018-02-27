@@ -31,3 +31,5 @@ Fast Find
 O(1) union and O(mlogn) find
 
 Path Compression: On its path to find the parent, create direct pointers between children and parents
+
+  
