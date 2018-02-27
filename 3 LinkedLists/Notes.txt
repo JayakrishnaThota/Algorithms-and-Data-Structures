@@ -1,0 +1,11 @@
+Advantages of LinkedList: 1) Constant time insertion and deletion from head. 
+2) No need to specify the size initially as the size grows dynamically
+
+Disadvantages: 1) No constant time indexing
+2) Wastage of space
+
+
+Circular Linked List applications: 
+
+1) When sevaral processes are sharing the cpu, round robin algorithm for scheduling
+2) Implementation of Stacks and Queues
