@@ -1,3 +1,6 @@
 Difference between height and depth.
 Full binary tree, complete binary tree, strict binary tree.
 Generic N-ary trees
+Threaded binary trees
+Expression trees
+XOR trees
