@@ -1,1 +1,6 @@
-
+Data Structure: A data structures is a way to store and organize data so that it can be used efficiently
+2 types: Linear: Elements are accessed in a linear order and Non-Linear: Elements are stored and accessed in a non-linear order
+ADT: Declaration of data + Declaration of operations
+Algorithm: Sequnece of steps for solving a problem
+Master Theorem
+Subtraction and Conquer 
