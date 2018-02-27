@@ -1,1 +1,12 @@
+Hash table: A simple implementation would be direct addressing in which each key is stored in an array 'key' and hence it can be retrieved
+in a constant time. However due to limited memory, this is always not possible.
 
+Hashing or Hash Function or hashCode: Maps the key to the location of key in the array
+One simple way is to module divide key by the array length
+
+Load factor = No of elements/size of the table
+
+Collision resolution techniques: 1) Separate Chaining
+2) Open Addressing
+
+Three in open addressing:1) Linear probing 2) Quadratic probing 3) Double Hashing
