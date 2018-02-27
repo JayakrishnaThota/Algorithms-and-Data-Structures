@@ -1,0 +1,3 @@
+Difference between height and depth.
+Full binary tree, complete binary tree, strict binary tree.
+
