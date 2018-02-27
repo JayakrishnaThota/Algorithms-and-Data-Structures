@@ -31,6 +31,7 @@ public class LinkedListImplementation {
         System.out.println(x+" is pushed onto the stack");
     }
 
+    
     //O(1)
     //Delete from beginning of a linked list
     public int pop(){
