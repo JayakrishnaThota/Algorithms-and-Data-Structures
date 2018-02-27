@@ -1,1 +1,33 @@
+Disjoint Sets: Unordered set in which elements are stored in no particular order
+This data structure is used in Kruskal's algorithm
 
+A relation on a set 's' means that for every element a,b which belongs to set 's', aRb is either true or false. 
+
+Equivalence relation: A relation is equivalent if it satisfies the following three properties
+1) Reflexive 
+2) Symmetric
+3) Transitive
+
+Eg: Rail connectivity is an equivalence relation 
+
+Disjoint set operations: 1) MakeSet(X): Create a new set with element x
+2) Union(X,Y): Creates a new set containing with elements x and y and removes all other sets containing both of these elements 
+3) Find(x): Returns the name of the set with element x
+
+Fast find can be implemented by storing the set names in the array value and the element name as array index. Union takes O(n).
+
+
+Fast Union: It can be implemented in 3 ways
+1) Slow Find
+2) Quick Find
+3) Path Compression
+
+Slow find: Use trees 
+O(1) union and O(mn) find
+
+Fast Find
+1) Union by size: Instead of storing the same element, save the negative of the size
+2) Union by Height: store the negative of the height
+O(1) union and O(mlogn) find
+
+Path Compression: On its path to find the parent, create direct pointers between children and parents
