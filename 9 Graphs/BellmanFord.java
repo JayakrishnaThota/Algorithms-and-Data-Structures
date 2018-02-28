@@ -111,3 +111,4 @@ class Graph
         graph.BellmanFord(graph, 0);
     }
 }
+
