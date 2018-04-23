@@ -1,3 +1,4 @@
+//O(n2) time and space solution
 public class Solution
 {
 	public int OptimalStrategy(int[] array)
