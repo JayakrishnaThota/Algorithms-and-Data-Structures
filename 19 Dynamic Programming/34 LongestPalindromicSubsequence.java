@@ -1,3 +1,4 @@
+//O(n2) time and space
 public class Solution 
 {
     public int longestPalindromeSubseq(String s) 
