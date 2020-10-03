@@ -1,3 +1,10 @@
+/*
+    Leetcode Reference for live example of Dijkstras and BellmanFord Algorithm
+    https://github.com/JayakrishnaThota/LC/blob/master/743.%20Network%20Delay%20Time
+*/
+
+//Dijkstras Time Complexity for adjancecy matrix representation: O(V^2 + ElogV) time and O(V+E) space
+
 package Graphs;
 import java.util.*;
 //Given a graph G=(V,E) represented by adjacency list and a source vertex
