@@ -3,6 +3,7 @@
     https://github.com/JayakrishnaThota/LC/blob/master/743.%20Network%20Delay%20Time
 */
 
+//Bellman Ford: O(VE) time and O(V) space
 package Graphs;
 import java.lang.*;
 
