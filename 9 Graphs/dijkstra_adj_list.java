@@ -3,7 +3,7 @@
     https://github.com/JayakrishnaThota/LC/blob/master/743.%20Network%20Delay%20Time
 */
 
-//Dijkstras Time Complexity for adjancecy matrix representation: O(V^2 + ElogV) time and O(V+E) space
+//Dijkstras Time Complexity for adjancecy matrix representation: O(E + VlogV) time and O(V+E) space
 
 package Graphs;
 import java.util.*;
